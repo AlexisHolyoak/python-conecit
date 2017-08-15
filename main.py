@@ -13,7 +13,7 @@ except Exception as e:
 	print e
 
 login = uic.loadUiType("gui/main.ui")[0]
-
+swin = uic.loadUiType("gui/content.ui")[0]
 class Login(QtGui.QWidget, login):
 	def __init__(self, parent = None):
 		super(Login, self).__init__()
@@ -49,7 +49,17 @@ class Login(QtGui.QWidget, login):
 			else:
 				print "ERROR"
 	def IngresarRegistro(self):
-		print "BIENVENIDO"
+		self.children = []
+		child = SystemWindows()
+		self.children.append(child)
+		self.close()
+
+class SystemWindows(QtGui.QWidget,swin):
+	def __init__(self, parent = None):
+		super(SystemWindows,self).__init__()
+		QtGui.QWidget.__init__(self,parent)
+		self.setupUi(self)
+		self.show()
 
 if __name__=="__main__":
 	 app=QtGui.QApplication(sys.argv)

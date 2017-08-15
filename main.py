@@ -14,7 +14,10 @@ class Login(QtGui.QWidget, login):
 		QtGui.QWidget.__init__(self, parent)
 		self.setupUi(self)
 		self.show()
+		self.btnIngresar.clicked.connect(self.ValidarUsuario)
 
+	def ValidarUsuario(self):
+		pass
 if __name__=="__main__":
 	 app=QtGui.QApplication(sys.argv)
 	 FWindows = Login(None)

@@ -1,6 +1,7 @@
 import sys
 import os
-
+#PARA LLAMAR A LA ENCRIPTACION
+import hashlib
 from PyQt4 import QtCore, QtGui, uic
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import *
@@ -41,7 +42,14 @@ class Login(QtGui.QWidget, login):
 		if len(result) ==0:
 			print "NO HAY USUARIOS REGISTRADOS"
 		else:
-			print "SI EXISTEN USUARIOS"
+			passw1 = hashlib.sha512(passw).hexdigest()
+			passw2 = result[0][0]
+			if passw1 == passw2:
+				self.IngresarRegistro()
+			else:
+				print "ERROR"
+	def IngresarRegistro(self):
+		print "BIENVENIDO"
 
 if __name__=="__main__":
 	 app=QtGui.QApplication(sys.argv)

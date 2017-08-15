@@ -6,7 +6,7 @@ from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
-login = uic.loadUiType("main.ui")[0]
+login = uic.loadUiType("gui/main.ui")[0]
 
 class Login(QtGui.QWidget, login):
 	def __init__(self, parent = None):
@@ -14,7 +14,7 @@ class Login(QtGui.QWidget, login):
 		QtGui.QWidget.__init__(self, parent)
 		self.setupUi(self)
 		self.show()
-		self.btnIngresar.clicked.connect(self.ValidarUsuario)
+		self.BTN_INGRESAR.clicked.connect(self.ValidarUsuario)
 
 	def ValidarUsuario(self):
 		pass

@@ -6,7 +6,7 @@ from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 
-login = uic.loadUiType("gui/main.ui")[0]
+login = uic.loadUiType("main.ui")[0]
 
 class Login(QtGui.QWidget, login):
 	def __init__(self, parent = None):
